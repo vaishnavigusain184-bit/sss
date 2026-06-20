@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Shivu ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Georgia,serif;
+background:linear-gradient(to bottom,#ffd6e7,#fff5f8);
+text-align:center;
+color:#6b2142;
+overflow-x:hidden;
+}
+.container{padding:30px 15px;}
+.card{
+background:white;
+max-width:800px;
+margin:auto;
+padding:25px;
+border-radius:25px;
+box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+#surprise{display:none;}
+input,button{
+padding:12px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+button{
+cursor:pointer;
+}
+.heart{
+position:fixed;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-100px);}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+
+<h1>💖 Hello Shivu 💖</h1>
+<p>A little surprise from your Veshu is waiting for you...</p>
+
+<div id="lockSection">
+<input id="pass" type="password" placeholder="Enter Password">
+<br><br>
+<button onclick="checkPass()">Unlock ❤️</button>
+</div>
+
+<div id="countdownSection" style="display:none;">
+<h2>⏳ Countdown To Your Birthday</h2>
+<h3 id="countdown"></h3>
+</div>
+
+<div id="surprise">
+<h1>🎂 Happy Birthday Shivu 🎂</h1>
+
+<p>
+Dear Shivu ❤️,<br><br>
+
+Happy Birthday, my love.<br><br>
+
+Today is your day, and I just want to remind you how incredibly special you are to me.<br><br>
+
+You are my everything. You are my comfort, my happiness, my biggest support, and the person who makes even the most ordinary days feel beautiful.<br><br>
+
+Thank you for being the best part of my life. Thank you for always being there, for making me smile, for understanding me, and for loving me the way you do.<br><br>
+
+I feel so lucky that I get to call you mine.<br><br>
+
+No matter where life takes us, I will always cherish every laugh, every memory, every conversation, and every moment we've shared together.<br><br>
+
+On your birthday, I wish you endless happiness, success, good health, peace, and all the love in the world because you deserve nothing less.<br><br>
+
+May this year bring you closer to every dream you have and fill your life with beautiful moments.<br><br>
+
+Thank you for being my Shivu.<br><br>
+
+Forever yours,<br><br>
+
+❤️ Your Veshu ❤️
+</p>
+
+<hr>
+
+<h2>📸 Our Memories</h2>
+<p>Add your photos here later.</p>
+
+<h2>🎥 Video Message</h2>
+<p>Add your birthday video here later.</p>
+
+<h2>🎵 Our Song</h2>
+<p>Add your music or voice note here later.</p>
+
+<p><b>Scroll down, birthday boy 🎁... I have more surprises waiting for you.</b></p>
+
+</div>
+</div>
+</div>
+
+<script>
+function checkPass(){
+let p=document.getElementById("pass").value;
+if(p==="shivudivaish"){
+document.getElementById("lockSection").style.display="none";
+document.getElementById("countdownSection").style.display="block";
+}else{
+alert("Wrong Password ❤️");
+}
+}
+
+var birthday=new Date("July 4, 2026 00:00:00").getTime();
+
+var x=setInterval(function(){
+var now=new Date().getTime();
+var distance=birthday-now;
+
+var days=Math.floor(distance/(1000*60*60*24));
+var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var mins=Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("countdown").innerHTML =
+days+" Days "+hours+" Hours "+mins+" Minutes";
+
+if(distance<0){
+clearInterval(x);
+document.getElementById("countdownSection").style.display="none";
+document.getElementById("surprise").style.display="block";
+}
+},1000);
+
+for(let i=0;i<20;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDelay=Math.random()*8+"s";
+document.body.appendChild(heart);
+}
+</script>
+</body>
+</html>
